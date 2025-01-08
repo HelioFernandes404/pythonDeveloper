@@ -77,10 +77,55 @@ for index in range(len(list)):
 else:
     print("In else block")
 
-# TODO: https://www.geeksforgeeks.org/loops-in-python/
-## Index of Sequences <= aonde nos parou
+## Index of Sequences
+list = ["apple", "banana", "cherry"]
+for index in range(len(list)):
+    print(list[index])
+# Output: apple banana cherry    
+
+## Nested loops
+from __future__ import print_function
+for i in range(1, 5):
+    for j in range(i):
+        print(i, end=" ")
+    print()
+# 1 
+# 2 2 
+# 3 3 3 
+# 4 4 4 4 
+
+#TODO: revisar essa parte https://www.geeksforgeeks.org/loops-in-python/
+## Loop control statements
+### Continue statement
+for letter in "python":
+    if letter == "h":
+        continue
+    print("Current Letter: ", letter)
+### Break statement
+for letter in "python":
+    if letter == "h":
+        break
+    print("Current Letter: ", letter)
+### Pass statement
+for letter in "python":
+    if letter == "h":
+        break
+    print("Current Letter: ", letter)
+### How for loops internally in Python
+for fruit in ["apple", "banana", "cherry"]:
+    print(fruit)
+fruit = ["apple", "banana", "cherry"]
+iter_obj = iter(fruit)
+while True:
+    try:
+        print(next(iter_obj))
+    except StopIteration:
+        break
+# output: apple banana cherry
 
 # Type Casting
+
+
 
 # Exceptions
 
