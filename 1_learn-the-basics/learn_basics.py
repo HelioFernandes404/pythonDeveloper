@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 # Basic Syntax
 print("Hello World")
 
@@ -84,7 +86,6 @@ for index in range(len(list)):
 # Output: apple banana cherry    
 
 ## Nested loops
-from __future__ import print_function
 for i in range(1, 5):
     for j in range(i):
         print(i, end=" ")
@@ -94,7 +95,6 @@ for i in range(1, 5):
 # 3 3 3 
 # 4 4 4 4 
 
-#TODO: revisar essa parte https://www.geeksforgeeks.org/loops-in-python/
 ## Loop control statements
 ### Continue statement
 for letter in "python":
@@ -106,10 +106,12 @@ for letter in "python":
     if letter == "h":
         break
     print("Current Letter: ", letter)
+    # Output : Current Letter:  h
 ### Pass statement
 for letter in "python":
     if letter == "h":
-        break
+        pass
+        print("Last letter: ", letter)
     print("Current Letter: ", letter)
 ### How for loops internally in Python
 for fruit in ["apple", "banana", "cherry"]:
