@@ -127,9 +127,93 @@ while True:
 
 # Type Casting
 
+## Two types of type casting (Implicit and Explicit)
+
+# Integer to float
+integer_number = 123
+float_number = 1.23
+
+new_number = integer_number + float_number
+
+# Display the new number and result data type
+print("Value ", new_number)
+print("Data type", type(new_number))
+
+## Addition of string and integer using explict conversion
+num_string = '12'
+num_integer = 23
+
+print("Data type of num_string before Type Casting: ", type(num_string))
+# explicit type conversion
+num_string = int(num_string)
+
+print("Data type of num_string after Type Casting: ", type(num_string))
+
+num_sum = num_string + num_integer
+
+print("sum: ", num_sum)
+print("Data type of sum: ", type(num_sum))
 
 
 # Exceptions
+
+## Python Exceptions
+
+### Python Built-in Exceptions
+print(dir(locals()['__builtins__']))
+
+### Python Error and Exception
+# Python try...except Block
+try:
+    # block of code
+    pass
+except Exception as e:
+    # block
+    pass
+
+# Exception handling using try... except
+try:
+    numerator = 10
+    denominator = 0
+
+    result = numerator / denominator
+
+    print("Result: ", result)
+except:
+    print("Error: Division by zero")
+
+# Catchinh specific exception in Python
+try:
+    even_numbers = [2, 4, 6, 8, 10]
+    print(even_numbers[5])
+
+except ZeroDivisionError:
+    print("Error: Division by zero")
+except IndexError:
+    print("Error: Index out of range")
+
+# Python try with else clause 
+try:
+    num = int(input("Enter a number: "))
+    assert num % 2 == 0
+except:
+    print("Error: Only even numbers are allowed")
+else:
+    reciprocal = 1 / num
+    print("Reciprocal of ", num, " is ", reciprocal)
+
+# Python try with finally clause
+try:
+    numerator = 10
+    denominator = 0
+
+    result = numerator / denominator
+
+    print("Result: ", result)
+except:
+    print("Error: Division by zero")
+finally:
+    print("This is finally block")
 
 # Functions, builtin functions
 
