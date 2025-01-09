@@ -259,6 +259,22 @@ if not 5000 < salary < 15000:
 
 # Functions, builtin functions
 
+## Creating a fuction
+def my_function():
+    print("Hello from my function")
+
+# Calling a function
+my_function()
+
+# Arguments
+def my_function_with_args(username, greeting):
+    print("Hello, %s, From My Function!, I wish you %s" % (username, greeting))
+
+my_function_with_args("John Doe", "a great year!")
+
+# TODO: Parameters or Arguments?
+
+
 # List, Tuple, Set,
 
 # Dictionaries
