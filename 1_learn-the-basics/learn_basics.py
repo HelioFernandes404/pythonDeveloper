@@ -215,6 +215,48 @@ except:
 finally:
     print("This is finally block")
 
+
+# Python Custom Exceptions
+class MyError(Exception):
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return (repr(self.value))
+
+
+# Python User-Defined Exception
+class InvalidAgeExeption(Exception):
+    "Raised whe in input value is less than 18"
+    pass
+
+# you need to guess this number
+number = 18
+try:
+    i_num = int(input("Enter a number: "))
+    if i_num < number:
+        raise InvalidAgeExeption
+    else:
+        print("Congratulations! You guessed it correctly.")
+
+except InvalidAgeExeption:
+    print("This value is too small, try again!")  
+
+
+# Customizing Exception Classes
+class SalaryNotInRange(Exception):
+    def __init__(self, salary, message="Salary is not in (5000, 15000) range"):
+        self.salary = salary
+        self.message = message
+        super().__init__(self.message)
+
+    def __str__(self):
+        return f"{self.salary} -> {self.message}"
+
+salary = int(input("Enter salary: "))
+if not 5000 < salary < 15000:
+    raise SalaryNotInRange(salary)
+
 # Functions, builtin functions
 
 # List, Tuple, Set,
