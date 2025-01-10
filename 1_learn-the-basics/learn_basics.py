@@ -272,8 +272,96 @@ def my_function_with_args(username, greeting):
 
 my_function_with_args("John Doe", "a great year!")
 
-# TODO: Parameters or Arguments?
+# Parameters or Arguments?
 
+## Number of Arguments
+def num_args(fname, lname):
+    print("Hello", fname, lname)
+
+num_args("John", "Doe") # this fuction expetcs 2 arguments, and get 2 arguments
+
+
+# Arbitrary Arguments, *args
+def greet_kids(*kids):
+    print("The youngest child is " + kids[2])
+
+greet_kids("Emil", "Tobias", "Linus") # output: The youngest child is Linus
+
+# Keyword Arguments
+def greet_kids(child3, child2, child1):
+    print("The youngest child is " + child3)
+
+greet_kids(child1 = "Emil", child2 = "Tobias", child3 = "Linus") # output: The youngest child is Linus
+
+
+# Arbitrary Keyword Arguments, **kwargs
+def greet_kids(**kids):
+    print("The youngest child is " + kids["child3"])
+
+greet_kids(fname = "Tobias", lname = "Linus") # output: The youngest
+
+
+# Default Parameter Value
+def default_value(country = "Norway"):
+    print("I am from " + country)
+
+default_value("Sweden") # output: I am from Sweden
+default_value() # output: I am from Norway
+default_value("India") # output: I am from India
+
+
+# Passing a List as an Argument
+def print_food(food):
+    for x in food:
+        print(x)
+
+fruits = ["apple", "banana", "cherry"]
+
+print_food(fruits) # output: apple banana cherry
+
+
+# Return Values
+def my_function(x):
+    return 5 * x
+
+print(my_function(3)) # output: 15
+
+
+# The pass Statement
+def my_function_pass():
+    pass
+# having an empty function definition like this, would raise an error without the pass statement
+
+# Positional-Only arguments
+def positional_only(arg, /):
+    print(arg)
+
+positional_only(10) # output: 10
+
+
+# Keyword-Only arguments
+
+def keyword_only(*, arg):
+    print(arg)
+print(arg = 10) # output: 10
+
+# Combine positional-only and keyword-only arguments
+def combined_example(a, b, /, c, d, *, e, f):
+    print(a, b, c, d, e, f)
+
+combined_example(5, 6, c = 7, d= 8 )
+
+# Recursion
+def tri_recursion(k):
+    if k > 0:
+        result = k + tri_recursion(k - 1)
+        print(result)
+    else:
+        result = 0
+    return result
+
+print("\n\nRecursion Example Results")
+tri_recursion(6)
 
 # List, Tuple, Set,
 
