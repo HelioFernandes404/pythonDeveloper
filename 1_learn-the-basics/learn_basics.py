@@ -365,4 +365,50 @@ tri_recursion(6)
 
 # List, Tuple, Set,
 
+## List dynamic array
+["apple", "banana", "cherry"]
+# 1. Quando voce precisa mutar sua lista
+# 2. Quando voce preicsa remover e adicionar elementos
+
+## Tuple immutable list
+("apple", "banana", "cherry")
+# 1. Se seus dados devem ou não ser alterados
+# 2. Tuplas são mais rapida que listas. Devemos usar tupla em vez de lista se estivermos deifindo conjuntos constente de valores de tudo o que vamos fazer e iterar sobre eles
+# 3. Se precisarmos de um arry de eleemntos para serem usa como chaves de dicionario, podemos usar tuplas, como lista são mutaveis, elas não podem ser usadas como chaves de dicionario
+
+
+## Set unordered collection of unique items
+{"apple", "banana", "cherry"}
+
+
 # Dictionaries
+thisdict = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+}
+
+print(thisdict)
+
+
+# Dict items
+print(thisdict["brand"])
+
+# Ordered or Unordered?
+
+# Changeable
+
+# Dirct items - Datar types
+
+thisdict = {
+    "brand": "Ford",
+    "electric": False,
+    "year": 1964,
+    "colors": ["red", "white", "blue"]
+} # Output: {'brand': 'Ford', 'electric': False, 'year': 1964, 'colors': ['red', 'white', 'blue']}
+
+
+# The dic() Constructor
+thisdict = dict(brand="Ford", model="Mustang", year=1964)
+
+
