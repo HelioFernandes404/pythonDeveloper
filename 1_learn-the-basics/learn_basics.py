@@ -83,17 +83,17 @@ else:
 list = ["apple", "banana", "cherry"]
 for index in range(len(list)):
     print(list[index])
-# Output: apple banana cherry    
+# Output: apple banana cherry
 
 ## Nested loops
 for i in range(1, 5):
     for j in range(i):
         print(i, end=" ")
     print()
-# 1 
-# 2 2 
-# 3 3 3 
-# 4 4 4 4 
+# 1
+# 2 2
+# 3 3 3
+# 4 4 4 4
 
 ## Loop control statements
 ### Continue statement
@@ -140,7 +140,7 @@ print("Value ", new_number)
 print("Data type", type(new_number))
 
 ## Addition of string and integer using explict conversion
-num_string = '12'
+num_string = "12"
 num_integer = 23
 
 print("Data type of num_string before Type Casting: ", type(num_string))
@@ -160,7 +160,7 @@ print("Data type of sum: ", type(num_sum))
 ## Python Exceptions
 
 ### Python Built-in Exceptions
-print(dir(locals()['__builtins__']))
+print(dir(locals()["__builtins__"]))
 
 ### Python Error and Exception
 # Python try...except Block
@@ -192,7 +192,7 @@ except ZeroDivisionError:
 except IndexError:
     print("Error: Index out of range")
 
-# Python try with else clause 
+# Python try with else clause
 try:
     num = int(input("Enter a number: "))
     assert num % 2 == 0
@@ -222,13 +222,14 @@ class MyError(Exception):
         self.value = value
 
     def __str__(self):
-        return (repr(self.value))
+        return repr(self.value)
 
 
 # Python User-Defined Exception
 class InvalidAgeExeption(Exception):
     "Raised whe in input value is less than 18"
     pass
+
 
 # you need to guess this number
 number = 18
@@ -240,7 +241,7 @@ try:
         print("Congratulations! You guessed it correctly.")
 
 except InvalidAgeExeption:
-    print("This value is too small, try again!")  
+    print("This value is too small, try again!")
 
 
 # Customizing Exception Classes
@@ -253,61 +254,75 @@ class SalaryNotInRange(Exception):
     def __str__(self):
         return f"{self.salary} -> {self.message}"
 
+
 salary = int(input("Enter salary: "))
 if not 5000 < salary < 15000:
     raise SalaryNotInRange(salary)
 
 # Functions, builtin functions
 
+
 ## Creating a fuction
 def my_function():
     print("Hello from my function")
 
+
 # Calling a function
 my_function()
+
 
 # Arguments
 def my_function_with_args(username, greeting):
     print("Hello, %s, From My Function!, I wish you %s" % (username, greeting))
 
+
 my_function_with_args("John Doe", "a great year!")
 
 # Parameters or Arguments?
+
 
 ## Number of Arguments
 def num_args(fname, lname):
     print("Hello", fname, lname)
 
-num_args("John", "Doe") # this fuction expetcs 2 arguments, and get 2 arguments
+
+num_args("John", "Doe")  # this fuction expetcs 2 arguments, and get 2 arguments
 
 
 # Arbitrary Arguments, *args
 def greet_kids(*kids):
     print("The youngest child is " + kids[2])
 
-greet_kids("Emil", "Tobias", "Linus") # output: The youngest child is Linus
+
+greet_kids("Emil", "Tobias", "Linus")  # output: The youngest child is Linus
+
 
 # Keyword Arguments
 def greet_kids(child3, child2, child1):
     print("The youngest child is " + child3)
 
-greet_kids(child1 = "Emil", child2 = "Tobias", child3 = "Linus") # output: The youngest child is Linus
+
+greet_kids(
+    child1="Emil", child2="Tobias", child3="Linus"
+)  # output: The youngest child is Linus
 
 
 # Arbitrary Keyword Arguments, **kwargs
 def greet_kids(**kids):
     print("The youngest child is " + kids["child3"])
 
-greet_kids(fname = "Tobias", lname = "Linus") # output: The youngest
+
+greet_kids(fname="Tobias", lname="Linus")  # output: The youngest
 
 
 # Default Parameter Value
-def default_value(country = "Norway"):
+def default_value(country="Norway"):
     print("I am from " + country)
 
-default_value("Sweden") # output: I am from Sweden
-default_value() # output: I am from Norway
-default_value("India") # output: I am from India
+
+default_value("Sweden")  # output: I am from Sweden
+default_value()  # output: I am from Norway
+default_value("India")  # output: I am from India
 
 
 # Passing a List as an Argument
@@ -315,41 +330,53 @@ def print_food(food):
     for x in food:
         print(x)
 
+
 fruits = ["apple", "banana", "cherry"]
 
-print_food(fruits) # output: apple banana cherry
+print_food(fruits)  # output: apple banana cherry
 
 
 # Return Values
 def my_function(x):
     return 5 * x
 
-print(my_function(3)) # output: 15
+
+print(my_function(3))  # output: 15
 
 
 # The pass Statement
 def my_function_pass():
     pass
+
+
 # having an empty function definition like this, would raise an error without the pass statement
+
 
 # Positional-Only arguments
 def positional_only(arg, /):
     print(arg)
 
-positional_only(10) # output: 10
+
+positional_only(10)  # output: 10
 
 
 # Keyword-Only arguments
 
+
 def keyword_only(*, arg):
     print(arg)
-print(arg = 10) # output: 10
+
+
+print(arg=10)  # output: 10
+
 
 # Combine positional-only and keyword-only arguments
 def combined_example(a, b, /, c, d, *, e, f):
     print(a, b, c, d, e, f)
 
-combined_example(5, 6, c = 7, d= 8 )
+
+combined_example(5, 6, c=7, d=8)
+
 
 # Recursion
 def tri_recursion(k):
@@ -359,6 +386,7 @@ def tri_recursion(k):
     else:
         result = 0
     return result
+
 
 print("\n\nRecursion Example Results")
 tri_recursion(6)
@@ -382,11 +410,7 @@ tri_recursion(6)
 
 
 # Dictionaries
-thisdict = {
-    "brand": "Ford",
-    "model": "Mustang",
-    "year": 1964
-}
+thisdict = {"brand": "Ford", "model": "Mustang", "year": 1964}
 
 print(thisdict)
 
@@ -404,11 +428,11 @@ thisdict = {
     "brand": "Ford",
     "electric": False,
     "year": 1964,
-    "colors": ["red", "white", "blue"]
-} # Output: {'brand': 'Ford', 'electric': False, 'year': 1964, 'colors': ['red', 'white', 'blue']}
+    "colors": ["red", "white", "blue"],
+}  # Output: {'brand': 'Ford', 'electric': False, 'year': 1964, 'colors': ['red', 'white', 'blue']}
 
 
 # The dic() Constructor
 thisdict = dict(brand="Ford", model="Mustang", year=1964)
 
-
+# https://www.python.org/
