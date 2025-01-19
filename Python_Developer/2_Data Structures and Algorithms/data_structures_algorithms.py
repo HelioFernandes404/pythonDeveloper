@@ -58,6 +58,10 @@ print("spacfic value")
 for x in a[1:3]:
     print(x)
 
+#  Make sure you practice as much as possible and revert your experience.
+# https://www.edureka.co/blog/arrays-in-python/
+
+
 # Hash Tables
 
 # Heaps, stacks, and queues
