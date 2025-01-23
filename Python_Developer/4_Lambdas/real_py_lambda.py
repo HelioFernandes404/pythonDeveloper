@@ -34,7 +34,6 @@ full_name = lambda first, last: f"Full name: {first.title()} {last.title()}"
 print(full_name("guido", "van rossum"))  # Output: Full name: Guido Van Rossum
 
 # Anonymous Functions
-_(1, 2)  # type: ignore
 # Output: 3
 
 # iffy in Python
@@ -171,9 +170,44 @@ print(sorted(ids))  # Output: ['id1', 'id100', 'id2', 'id22', 'id3', 'id30']
 
 # UI Frameworks
 # Python Interpreter
+from timeit import timeit
+
+timeit("lambda x: x + 1", number=10)
+# Output: 0.000001
+
 # timeit
 # Monkey Patching
+from contextlib import contextmanager
+import secrets
+
+
+def gen_token():
+    """Generate a random token."""
+    return f"TOKEN_{secrets.token_hex(8)}"
+
+
+@contextmanager
+def mock_token():
+    """Context manager to monkey patch the secrets.token_hex
+    function during testing.
+    """
+    default_token_hex = secrets.token_hex
+    secrets.token_hex = lambda _: "feedfacecafebeef"
+    yield
+    secrets.token_hex = default_token_hex
+
+
+def test_gen_token():
+    """Test the random token."""
+    with mock_token():
+        assert gen_token() == f"TOKEN_{'feedfacecafebeef'}"
+
+
+test_gen_token()
+
 # Alternatives to Lambdas
+
+
 # Map
 # Filter
 # Reduce
